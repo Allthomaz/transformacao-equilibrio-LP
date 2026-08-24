@@ -1,61 +1,93 @@
 ---
-import { Image } from 'astro:assets';
-import consultorio from '../assets/imagens/consultorio.jpeg';
+import { Image, getImage } from 'astro:assets';
+import consultorioMobile from '../assets/imagens/consultorio-aconchegante.png';
+import consultorioDesktop from '../assets/imagens/consultorio-aconchegante-desktop.png';
+
+const desktopWidths = [1280, 1536];
+const desktopImages = await Promise.all(
+  desktopWidths.map((width) => getImage({ src: consultorioDesktop, width, format: 'webp' }))
+);
+const desktopSrcset = desktopImages
+  .map((image, index) => `${image.src} ${desktopWidths[index]}w`)
+  .join(', ');
 ---
 <section class="acolhimento">
-  <Image
-    class="acolhimento__bg"
-    src={consultorio}
-    alt="Consultório acolhedor da psicóloga Andréa Rosa Souza, no Tatuapé"
-    widths={[720, 1080, 1440, 1920]}
-    sizes="100vw"
-    loading="lazy"
-  />
+  <picture class="acolhimento__picture">
+    <source
+      media="(min-width: 641px)"
+      srcset={desktopSrcset}
+      sizes="100vw"
+      type="image/webp"
+    />
+    <Image
+      class="acolhimento__bg"
+      src={consultorioMobile}
+      alt="Consultório acolhedor da psicóloga Andréa Rosa Souza, no Tatuapé"
+      widths={[480, 720, 1080]}
+      sizes="100vw"
+      loading="lazy"
+    />
+  </picture>
   <div class="acolhimento__overlay"></div>
   <div class="acolhimento__conteudo">
-    <p class="frase">Um lugar onde você pode chegar <em>sem máscara</em>, falar o que não cabe em mensagem e ser ouvido sem pressa.</p>
+    <p class="frase">Um lugar onde você pode chegar <em>sem máscara</em>, falar o que pensa e ser ouvido sem pressa.</p>
     <span class="assinatura">Transformação &amp; Equilíbrio</span>
   </div>
 </section>
 <style>
 .acolhimento {
   position: relative;
-  min-height: 92vh;
+  height: 108vh;
+  height: 108svh;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
 }
+.acolhimento__picture,
 .acolhimento__bg {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
+}
+.acolhimento__picture { display: block; }
+.acolhimento__bg {
   object-fit: cover;
+  right: auto;
+  width: 124%;
+  object-position: left center;
   filter: saturate(0.92) brightness(0.94);
 }
 .acolhimento__overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(transparent 40%, rgba(26,26,26,0.55));
+  background: linear-gradient(180deg, rgba(26,26,26,.02), rgba(26,26,26,.16));
   pointer-events: none;
 }
 .acolhimento__conteudo {
   position: relative; z-index: 2;
-  max-width: 560px;
-  padding: 0 8vw 8vh;
+  width: min(620px, calc(100% - 10vw));
+  margin: 0 0 clamp(36px, 6vh, 64px) 5vw;
+  padding: clamp(22px, 2.5vw, 30px) clamp(24px, 3vw, 34px);
+  border: 1px solid rgba(255,255,255,.32);
+  border-radius: 28px;
+  background: rgba(245,241,234,.16);
+  -webkit-backdrop-filter: blur(11px) saturate(1.08);
+  backdrop-filter: blur(11px) saturate(1.08);
+  box-shadow: 0 18px 48px rgba(26,26,26,.12), inset 0 1px 0 rgba(255,255,255,.38);
 }
 .frase {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: clamp(32px, 4vw, 56px);
-  line-height: 1.14;
+  font-size: clamp(29px, 3.2vw, 43px);
+  line-height: 1.12;
   color: #FBF8F2;
-  text-shadow: 0 2px 22px rgba(26,26,26,0.45), 0 1px 3px rgba(26,26,26,0.35);
+  text-shadow: 0 1px 16px rgba(26,26,26,.34), 0 1px 2px rgba(26,26,26,.28);
 }
 .frase em { font-style: italic; color: #E8C9A8; }
 .assinatura {
-  margin-top: 32px;
-  font-size: 14px; font-weight: 400;
-  letter-spacing: 3px; text-transform: uppercase;
-  color: rgba(251,248,242,0.92);
-  text-shadow: 0 1px 10px rgba(26,26,26,0.5);
+  margin-top: 18px;
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 2.4px; text-transform: uppercase;
+  color: rgba(251,248,242,.88);
+  text-shadow: 0 1px 8px rgba(26,26,26,.38);
   display: inline-flex; align-items: center; gap: 12px;
 }
 .assinatura::before,
@@ -64,7 +96,26 @@ import consultorio from '../assets/imagens/consultorio.jpeg';
   background: rgba(251,248,242,0.7);
 }
 @media (max-width: 640px) {
-  .acolhimento { min-height: 74vh; }
-  .acolhimento__conteudo { padding: 0 7vw 7vh; }
+  .acolhimento {
+    height: 92vh;
+    height: 92svh;
+  }
+  .acolhimento__bg {
+    right: 0;
+    width: 100%;
+    object-position: center center;
+  }
+  .acolhimento__conteudo {
+    width: calc(100% - 32px);
+    margin: 0 16px 20px;
+    padding: 20px 20px 18px;
+    border-radius: 22px;
+    background: rgba(245,241,234,.14);
+    -webkit-backdrop-filter: blur(9px) saturate(1.05);
+    backdrop-filter: blur(9px) saturate(1.05);
+  }
+  .frase { font-size: clamp(25px, 7.2vw, 31px); line-height: 1.1; }
+  .assinatura { margin-top: 16px; font-size: 10px; letter-spacing: 2px; }
+  .assinatura::before, .assinatura::after { width: 20px; }
 }
 </style>

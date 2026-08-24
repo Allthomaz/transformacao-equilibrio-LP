@@ -9,13 +9,14 @@ import Sobre from '../components/Sobre.astro';
 import ComoFunciona from '../components/ComoFunciona.astro';
 import Servicos from '../components/Servicos.astro';
 import Acolhimento from '../components/Acolhimento.astro';
+import Localizacao from '../components/Localizacao.astro';
 import Faq from '../components/Faq.astro';
 import CtaFinal from '../components/CtaFinal.astro';
 import Rodape from '../components/Rodape.astro';
 ---
 <Layout title="Andréa Rosa Souza, Psicóloga no Tatuapé & Online | Transformação & Equilíbrio" description="Psicoterapia acolhedora com embasamento técnico. Adultos, jovens e casais. Presencial no Tatuapé ou online. CRP 06/136303.">
   <Header />
-  <main>
+  <main id="conteudo-principal" tabindex="-1">
       <Hero />
       <Marquee />
       <ProvaSocial />
@@ -25,6 +26,7 @@ import Rodape from '../components/Rodape.astro';
       <Sobre />
       <ComoFunciona />
       <Faq />
+      <Localizacao />
       <CtaFinal />
     </main>
   <Rodape />

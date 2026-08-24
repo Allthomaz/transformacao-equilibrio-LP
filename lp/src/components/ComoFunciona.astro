@@ -21,9 +21,9 @@ const passos = [
   <p class="kicker">Como funciona</p>
   <h2 class="como-funciona__titulo" data-reveal>Três passos, no seu ritmo</h2>
 
-  <div class="passos">
+  <div class="passos" data-passos-reveal>
     {passos.map((p, i) => (
-      <article class="passo" data-reveal>
+      <article class="passo">
         <span class="passo__numero">{p.numero}</span>
         <h3 class="passo__titulo">{p.titulo}</h3>
         <p class="passo__texto">{p.texto}</p>
@@ -31,7 +31,7 @@ const passos = [
     ))}
   </div>
 
-  <div class="video-wrap" data-reveal>
+  <div class="video-wrap" data-video-reveal>
     <video
       class="como-funciona__video"
       muted
@@ -117,8 +117,11 @@ const passos = [
 }
 .como-funciona__link:hover, .como-funciona__link:focus-visible { text-decoration: underline; }
 .como-funciona__video {
+  display: block;
   width: 100%;
   max-width: 960px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   border-radius: 20px;
   box-shadow: 0 24px 60px -20px rgba(26, 26, 26, 0.25);
   background: var(--bg);
@@ -126,6 +129,10 @@ const passos = [
 @media (max-width: 860px) {
   .passos { grid-template-columns: 1fr; gap: 20px; margin-bottom: 48px; }
   .passo { padding: 26px 22px; }
+  .como-funciona__video {
+    aspect-ratio: 9 / 16;
+    max-width: 520px;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   .como-funciona__video { pointer-events: auto; }
