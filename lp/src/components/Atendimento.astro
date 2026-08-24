@@ -1,0 +1,77 @@
+---
+const WHATSAPP = 'https://wa.me/5511961205743';
+const temas = [
+  { titulo: 'Ansiedade', frase: 'Coração acelerado no trânsito, mente ensaiando conversas que ainda não aconteceram — e, mesmo assim, você não consegue parar.' },
+  { titulo: 'Depressão', frase: 'Acordar, olhar o celular e já estar cansado. O que antes dava prazer hoje exige força pra começar.' },
+  { titulo: 'Luto e perdas', frase: 'A vida pede que você siga, mas tem dias em que uma música, um cheiro ou uma data derrubam tudo de novo.' },
+  { titulo: 'Traumas e fobias', frase: 'Evitar a rua, o elevador, o cachorro — organizar o dia inteiro em volta de algo que você prefere não encontrar.' },
+  { titulo: 'TOC', frase: 'Trancar a porta e voltar três vezes pra conferir. Saber que é irracional — e não conseguir evitar o ritual.' },
+  { titulo: 'Bipolaridade', frase: 'Semanas em que você dá conta de tudo — e outras em que nem levantar da cama parece possível. Sem aviso, sem meio-termo.' },
+  { titulo: 'Borderline', frase: 'Relações que começam intensas e terminam em medo de ser abandonado — e uma sensação de vazio que nenhuma distração preenche.' },
+  { titulo: 'Relacionamento abusivo', frase: 'Andar em ovos dentro de casa, reler mensagens pra entender o que deu errado, duvidar da própria memória.' },
+  { titulo: 'Casal', frase: 'Vocês dividem o mesmo sofá e celulares diferentes. Brigas que começam na louça e terminam em silêncio por dias.' },
+  { titulo: 'Autoconhecimento', frase: 'Terminar relações, empregos e amizades que pareciam diferentes — e perceber que o final foi sempre o mesmo.' },
+];
+---
+<section class="atendimento" id="atendimento">
+  <p class="kicker">Atendimento</p>
+  <h2 class="atendimento__titulo">Tratamento e acolhimento a questões como:</h2>
+  <p class="atendimento__sub">Se alguma dessas frases parece com a sua semana, é um bom lugar pra começar.</p>
+  <div class="atendimento__grid">
+    {temas.map((t) => (
+      <a class="card" href={WHATSAPP} target="_blank" rel="noopener">
+        <h3 class="card__titulo">{t.titulo}</h3>
+        <p class="card__frase">{t.frase}</p>
+      </a>
+    ))}
+  </div>
+  <div class="atendimento__cta">
+    <p class="atendimento__cta-frase">Não se identificou? A conversa é o começo.</p>
+    <a class="atendimento__cta-link" href={WHATSAPP} target="_blank" rel="noopener">Me conte o que você está vivendo →</a>
+  </div>
+</section>
+<style>
+.atendimento { background: var(--bg); padding: 12vh 5vw; text-align: center; }
+.kicker {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-size: 13px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--terracota); margin-bottom: 22px;
+}
+.kicker::before, .kicker::after { content: ''; display: block; width: 34px; height: 1.5px; background: var(--terracota); }
+.atendimento__titulo { font-family: var(--serif); font-weight: 400; font-size: clamp(34px, 4vw, 54px); line-height: 1.12; margin-bottom: 14px; }
+.atendimento__sub { font-size: 17px; font-weight: 300; color: var(--texto-suave); margin-bottom: 48px; }
+.atendimento__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+.card {
+  position: relative; overflow: hidden;
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: 20px;
+  padding: 28px 24px;
+  text-decoration: none; color: var(--texto);
+  transition: transform .3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow .3s ease;
+}
+.card::before {
+  content: ''; position: absolute; top: 0; bottom: 0; left: -80%;
+  width: 55%;
+  background: linear-gradient(115deg, transparent, rgba(255,255,255,0.55), transparent);
+  transform: skewX(-20deg) translateX(-140%);
+  pointer-events: none;
+}
+.card:hover, .card:focus-visible { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(26,26,26,0.08); }
+.card:hover::before, .card:active::before, .card:focus-visible::before { animation: shine 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+@keyframes shine { to { transform: skewX(-20deg) translateX(340%); } }
+.card__titulo { font-family: var(--serif); font-weight: 400; font-size: 22px; margin-bottom: 10px; }
+.card__frase { font-size: 14px; font-weight: 300; line-height: 1.6; color: var(--texto-suave); }
+.atendimento__cta { margin-top: 52px; }
+.atendimento__cta-frase { font-family: var(--serif); font-style: italic; font-size: 24px; margin-bottom: 14px; }
+.atendimento__cta-link { color: var(--terracota); font-weight: 500; text-decoration: none; }
+.atendimento__cta-link:hover, .atendimento__cta-link:focus-visible { text-decoration: underline; }
+@media (prefers-reduced-motion: reduce) { .card:hover { transform: none; } .card::before { display: none; } }
+</style>
