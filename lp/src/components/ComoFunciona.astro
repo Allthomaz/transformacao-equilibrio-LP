@@ -1,0 +1,136 @@
+---
+const passos = [
+  {
+    numero: '1',
+    titulo: 'Você manda uma mensagem',
+    texto: 'Um WhatsApp, do jeito que der: duas linhas, um áudio, até um "oi, não sei como começar". Eu respondo pessoalmente, sem robô e sem compromisso. A gente combina horário, valores e formato (online ou presencial).',
+  },
+  {
+    numero: '2',
+    titulo: 'Primeira sessão: só uma conversa',
+    texto: 'Não é prova, não é interrogatório, não precisa ter nada "preparado" pra dizer. Você chega (ou entra na chamada), conta o que te trouxe até ali do jeito que conseguir — e se não souber por onde começar, eu conduzo. Muita gente sai da primeira sessão dizendo que era mais leve do que imaginava.',
+  },
+  {
+    numero: '3',
+    titulo: 'Caminho construído a dois',
+    texto: 'Combinamos juntos a frequência e o foco do processo. A cada sessão, você ganha escuta treinada e ferramentas práticas pra aplicar na semana real — naquela reunião, naquela conversa difícil, naquela noite que não vem o sono. No seu tempo, sem pressa e sem julgamento.',
+  },
+];
+---
+<section class="como-funciona" id="como-funciona">
+  <p class="kicker">Como funciona</p>
+  <h2 class="como-funciona__titulo" data-reveal>Três passos, no seu ritmo</h2>
+
+  <div class="passos">
+    {passos.map((p, i) => (
+      <article class="passo" data-reveal>
+        <span class="passo__numero">{p.numero}</span>
+        <h3 class="passo__titulo">{p.titulo}</h3>
+        <p class="passo__texto">{p.texto}</p>
+      </article>
+    ))}
+  </div>
+
+  <div class="video-wrap" data-reveal>
+    <video
+      class="como-funciona__video"
+      muted
+      loop
+      playsinline
+      preload="none"
+      poster="/videos/como-funciona-poster.jpg"
+      data-video-scroll
+      src="/videos/como-funciona.mp4"
+    ></video>
+  </div>
+</section>
+
+<style>
+.como-funciona {
+  background: var(--superficie);
+  padding: 12vh 5vw;
+  text-align: center;
+}
+.kicker {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-size: 0.8rem; font-weight: 500;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--verde);
+}
+.kicker::before,
+.kicker::after {
+  content: ''; width: 32px; height: 1.5px; background: var(--verde); opacity: 0.5;
+}
+.como-funciona__titulo {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  margin: 18px 0 48px;
+  color: var(--texto);
+}
+.passos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto 64px;
+  text-align: left;
+}
+.passo {
+  display: flex; flex-direction: column; gap: 12px;
+  padding: 32px 28px;
+  background: var(--bg);
+  border: 1px solid var(--borda);
+  border-radius: 16px;
+}
+.passo__numero {
+  font-family: var(--serif);
+  font-size: 3.4rem;
+  line-height: 1;
+  color: var(--terracota);
+}
+.passo__titulo {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--texto);
+}
+.passo__texto {
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--texto-suave);
+}
+.video-wrap {
+  display: flex; justify-content: center;
+}
+.como-funciona__video {
+  width: 100%;
+  max-width: 960px;
+  border-radius: 20px;
+  box-shadow: 0 24px 60px -20px rgba(26, 26, 26, 0.25);
+  background: var(--bg);
+}
+@media (max-width: 860px) {
+  .passos { grid-template-columns: 1fr; gap: 20px; margin-bottom: 48px; }
+  .passo { padding: 26px 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .como-funciona__video { pointer-events: auto; }
+}
+</style>
+
+<script>
+  const v = document.querySelector<HTMLVideoElement>('[data-video-scroll]');
+  if (v) {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduced) {
+      const obs = new IntersectionObserver(([e]) => {
+        if (e.isIntersecting) v.play().catch(() => {}); else v.pause();
+      }, { threshold: 0.4 });
+      obs.observe(v);
+    } else {
+      v.controls = true;
+    }
+  }
+</script>
