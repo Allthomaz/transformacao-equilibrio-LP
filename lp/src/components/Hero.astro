@@ -11,7 +11,8 @@ const DOCTORALIA = 'https://www.doctoralia.com.br/andrea-rosa-souza/psicologo/sa
       <span aria-hidden="true">Você não precisa mais carregar isso <span class="hero__palavra">sozinho</span></span>
       <span class="visually-hidden">Você não precisa mais carregar isso sozinho, sozinha ou sozinhx.</span>
     </h1>
-    <p class="hero__sub">Se as noites viraram revirar na cama, os dias viraram piloto automático e a frase "vou resolver isso depois" já dura meses, existe um lugar pra destravar isso com calma. Atendimento presencial no Tatuapé ou online, com escuta e embasamento técnico. Adultos e jovens a partir de 14 anos e casais.</p>
+    <p class="hero__sub">Se as noites viraram revirar na cama, os dias viraram piloto automático e a frase "vou resolver isso depois" já dura meses, existe um lugar pra destravar isso com calma. Atendimento presencial no Tatuapé ou online, com escuta e embasamento técnico.</p>
+    <p class="hero__publico">Adultos · Jovens 14+ · Casais</p>
     <div class="hero__ctas">
       <a class="btn" href={WHATSAPP} target="_blank" rel="noopener">Falar com a psicóloga</a>
       <a class="btn btn--outline" href={DOCTORALIA} target="_blank" rel="noopener">Verificar horários</a>
@@ -44,6 +45,7 @@ const DOCTORALIA = 'https://www.doctoralia.com.br/andrea-rosa-souza/psicologo/sa
 }
 .hero__palavra::after { content: '|'; display: inline-block; margin-left: .04em; color: var(--terracota-escuro); font-style: normal; font-weight: 300; animation: cursor-pisca .82s steps(1, end) infinite; }
 @keyframes cursor-pisca { 0%, 48% { opacity: 1; } 49%, 100% { opacity: 0; } }
+.hero__publico { color: #464646; font-size: 14px; font-weight: 600; letter-spacing: .025em; margin-top: -18px; margin-bottom: 34px; text-shadow: 0 1px 4px rgba(70,70,70,.12); }
 .hero__sub { font-size: 17px; font-weight: 300; line-height: 1.65; color: var(--texto-suave); max-width: 480px; margin-bottom: 34px; }
 .hero__ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 16px; }
 .hero__micro { font-size: 13px; color: var(--texto-suave); }
