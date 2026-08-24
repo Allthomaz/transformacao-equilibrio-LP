@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seção Acolhimento — Andréa Rosa Souza · Psicóloga</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F5F1EA;
+    --bege: #E8DCC0;
+    --texto: #1A1A1A;
+    --terracota: #B25F3F;
+    --terracota-escuro: #96492E;
+    --verde: #4A7C59;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--texto);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ──────────────────────────────
+     HERO (stub simples, só de exemplo)
+     ────────────────────────────── */
+  .hero-stub {
+    min-height: 78vh;
+    display: flex;
+    align-items: center;
+    padding: 0 8vw;
+    background: var(--bg);
+  }
+  .hero-stub__conteudo { max-width: 620px; }
+  .kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--terracota);
+    margin-bottom: 26px;
+  }
+  .kicker::before { content: ''; width: 34px; height: 1.5px; background: var(--terracota); }
+  .hero-stub h1 {
+    font-family: 'DM Serif Display', serif;
+    font-weight: 400;
+    font-size: clamp(40px, 5.4vw, 64px);
+    line-height: 1.1;
+    margin-bottom: 22px;
+  }
+  .hero-stub h1 em { font-style: italic; color: var(--terracota); }
+  .hero-stub p {
+    font-size: 17px; font-weight: 300; line-height: 1.65;
+    color: rgba(26,26,26,0.78); max-width: 460px; margin-bottom: 34px;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 28px; border-radius: 999px;
+    font-size: 15px; font-weight: 500; text-decoration: none;
+    background: var(--terracota); color: #fff;
+    box-shadow: 0 8px 24px rgba(178,95,63,0.35);
+    transition: background .2s ease, transform .2s ease;
+  }
+  .btn:hover { background: var(--terracota-escuro); transform: translateY(-2px); }
+
+  /* ──────────────────────────────
+     SEÇÃO-FOTO · Variação A escolhida
+     texto claro direto sobre a foto
+     ────────────────────────────── */
+  .secao-foto {
+    position: relative;
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    margin-top: 8vh;
+  }
+  .secao-foto__bg {
+    position: absolute; inset: 0;
+    background: url('consultorio.jpeg') center / cover no-repeat;
+    filter: saturate(0.92) brightness(0.94);
+  }
+  .secao-foto__centro {
+    position: relative; z-index: 2;
+    padding: 0 8vw;
+  }
+  .frase {
+    font-family: 'DM Serif Display', serif;
+    font-weight: 400;
+    font-size: clamp(44px, 6.8vw, 96px);
+    line-height: 1.12;
+    color: #FBF8F2;
+    text-shadow: 0 2px 22px rgba(26,26,26,0.45), 0 1px 3px rgba(26,26,26,0.35);
+    max-width: 1050px;
+  }
+  .frase em { font-style: italic; color: #E8C9A8; }
+  .assinatura {
+    margin-top: 32px;
+    font-size: 14px; font-weight: 400;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: rgba(251,248,242,0.92);
+    text-shadow: 0 1px 10px rgba(26,26,26,0.5);
+    display: inline-flex; align-items: center; gap: 12px;
+  }
+  .assinatura::before,
+  .assinatura::after {
+    content: ''; width: 30px; height: 1px;
+    background: rgba(251,248,242,0.7);
+  }
+
+  @media (max-width: 640px) {
+    .secao-foto { min-height: 74vh; }
+    .frase { padding: 0 7vw; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════ HERO (exemplo simplificado) ══════════ -->
+<section class="hero-stub">
+  <div class="hero-stub__conteudo">
+    <span class="kicker">Psicóloga · Tatuapé &amp; Online</span>
+    <h1>Um espaço seguro pra<br>viver o <em>equilíbrio</em><br>e a <em>transformação</em></h1>
+    <p>Às vezes o que mais precisamos é de um lugar pra sermos quem somos de verdade — sem julgamentos, com escuta e acolhimento.</p>
+    <a class="btn" href="#secao">Agendar uma conversa</a>
+  </div>
+</section>
+
+<!-- ══════════ SEÇÃO-FOTO · Variação A ══════════ -->
+<section class="secao-foto" id="secao">
+  <div class="secao-foto__bg"></div>
+  <div class="secao-foto__centro">
+    <p class="frase">Transformação começa<br>num <em>lugar onde você<br>se sente em casa</em></p>
+    <span class="assinatura">Transformação &amp; Equilíbrio</span>
+  </div>
+</section>
+
+</body>
+</html>
