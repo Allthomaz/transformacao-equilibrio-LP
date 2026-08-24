@@ -1,4 +1,4 @@
-// theme.ts — fonte única de verdade. NUNCA hex inline em componente.
+// theme.ts, fonte única de verdade. NUNCA hex inline em componente.
 import { Easing } from "remotion";
 import { loadFont as loadDMSerif } from "@remotion/google-fonts/DMSerifDisplay";
 import { loadFont as loadDMSans } from "@remotion/google-fonts/DMSans";
@@ -10,7 +10,7 @@ export const theme = {
   colors: {
     bg: "#F5F1EA",
     bgAlt: "#FBF8F2",
-    primary: "#B25F3F", // terracota — cor herói, máx. 1 elemento por frame
+    primary: "#B25F3F", // terracota, cor herói, máx. 1 elemento por frame
     primaryDark: "#96492E",
     accent: "#4A7C59", // verde
     text: "#3A2E26",

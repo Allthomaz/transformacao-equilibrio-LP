@@ -9,6 +9,8 @@ import {
 } from "remotion";
 import { theme } from "./theme";
 
+const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
+
 // ---------- Camadas base (5-layer stack) ----------
 
 const BgMesh: React.FC<{ seed: number }> = ({ seed }) => {
@@ -104,10 +106,11 @@ const Entrance: React.FC<{
     <div
       style={{
         opacity: p,
-        transform: `translateY(${interpolate(p, [0, 1], [40, 0])}px) scale(${interpolate(
+        transform: `translateY(${interpolate(p, [0, 1], [40, 0], { ...clamp, easing: theme.ease.out })}px) scale(${interpolate(
           p,
           [0, 1],
-          [0.94, 1]
+          [0.94, 1],
+          { ...clamp, easing: theme.ease.out }
         )})`,
         ...style,
       }}
@@ -129,6 +132,7 @@ const SceneShell: React.FC<{
     extrapolateRight: "clamp",
   });
   const exitO = interpolate(frame, [exitFrom, exitFrom + 10], [1, 0], {
+    easing: theme.ease.in,
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
@@ -158,7 +162,7 @@ const STEPS: Step[] = [
     title: "Primeira sessão: só uma conversa",
     lines: [
       "Não é prova, não é interrogatório. Você conta o que",
-      "te trouxe do jeito que conseguir — e se não souber",
+      "te trouxe do jeito que conseguir, e se não souber",
       "por onde começar, eu conduzo.",
     ],
   },
@@ -168,12 +172,12 @@ const STEPS: Step[] = [
     lines: [
       "Combinamos a frequência e o foco. A cada sessão,",
       "escuta treinada e ferramentas pra aplicar na semana",
-      "real — no seu tempo, sem pressa e sem julgamento.",
+      "real, no seu tempo, sem pressa e sem julgamento.",
     ],
   },
 ];
 
-const StepScene: React.FC<{ step: Step; index: number }> = ({ step, index }) => {
+const StepScene: React.FC<{ step: Step }> = ({ step }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   // respiração sutil para elementos parados >2s
@@ -191,7 +195,8 @@ const StepScene: React.FC<{ step: Step; index: number }> = ({ step, index }) => 
           width: interpolate(
             spring({ frame: frame - 4, fps, config: theme.spring.smooth }),
             [0, 1],
-            [0, 240]
+            [0, 240],
+            { ...clamp, easing: theme.ease.out }
           ),
           height: 2,
           backgroundColor: theme.colors.accent,
@@ -327,7 +332,7 @@ const ProgressRail: React.FC = () => {
                 borderRadius: "50%",
                 backgroundColor: active ? theme.colors.primary : theme.colors.bgAlt,
                 border: `2px solid ${active ? theme.colors.primary : "rgba(58,46,38,0.25)"}`,
-                transform: `scale(${interpolate(pop, [0, 1], [0.4, 1])})`,
+                transform: `scale(${interpolate(pop, [0, 1], [0.4, 1], { ...clamp, easing: theme.ease.out })})`,
               }}
             />
           );
@@ -363,6 +368,7 @@ const ClosingScene: React.FC = () => {
   const { fps, durationInFrames } = useVideoConfig();
   const breathe = 1 + Math.sin(frame / 22) * 0.012;
   const exitO = interpolate(frame, [durationInFrames - 8, durationInFrames - 1], [1, 0], {
+    easing: theme.ease.in,
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
@@ -430,7 +436,8 @@ const ClosingScene: React.FC = () => {
             opacity: interpolate(
               spring({ frame: frame - 18, fps, config: theme.spring.smooth }),
               [0, 1],
-              [0, 0.8]
+              [0, 0.8],
+              { ...clamp, easing: theme.ease.out }
             ),
           }}
         >
@@ -452,7 +459,7 @@ export const ComoFunciona: React.FC = () => {
       <BgMesh seed={0} />
       {STEPS.map((step, i) => (
         <SequenceSafe key={i} from={i * SCENE_LEN} durationInFrames={SCENE_LEN}>
-          <StepScene step={step} index={i} />
+          <StepScene step={step} />
         </SequenceSafe>
       ))}
       <SequenceSafe from={3 * SCENE_LEN} durationInFrames={TOTAL - 3 * SCENE_LEN}>

@@ -8,12 +8,12 @@ const passos = [
   {
     numero: '2',
     titulo: 'Primeira sessão: só uma conversa',
-    texto: 'Não é prova, não é interrogatório, não precisa ter nada "preparado" pra dizer. Você chega (ou entra na chamada), conta o que te trouxe até ali do jeito que conseguir — e se não souber por onde começar, eu conduzo. Muita gente sai da primeira sessão dizendo que era mais leve do que imaginava.',
+    texto: 'Não é prova, não é interrogatório, não precisa ter nada "preparado" pra dizer. Você chega (ou entra na chamada), conta o que te trouxe até ali do jeito que conseguir, e se não souber por onde começar, eu conduzo. Muita gente sai da primeira sessão dizendo que era mais leve do que imaginava.',
   },
   {
     numero: '3',
     titulo: 'Caminho construído a dois',
-    texto: 'Combinamos juntos a frequência e o foco do processo. A cada sessão, você ganha escuta treinada e ferramentas práticas pra aplicar na semana real — naquela reunião, naquela conversa difícil, naquela noite que não vem o sono. No seu tempo, sem pressa e sem julgamento.',
+    texto: 'Combinamos juntos a frequência e o foco do processo. A cada sessão, você ganha escuta treinada e ferramentas práticas pra aplicar na semana real, naquela reunião, naquela conversa difícil, naquela noite que não vem o sono. No seu tempo, sem pressa e sem julgamento.',
   },
 ];
 ---
@@ -39,10 +39,16 @@ const passos = [
       playsinline
       preload="none"
       poster="/videos/como-funciona-poster.jpg"
+      data-poster-desktop="/videos/como-funciona-poster.jpg"
+      data-poster-mobile="/videos/como-funciona-mobile-poster.jpg"
       data-video-scroll
-      src="/videos/como-funciona.mp4"
-    ></video>
+    >
+      <source media="(max-width: 860px)" src="/videos/como-funciona-mobile.mp4" type="video/mp4" />
+      <source src="/videos/como-funciona.mp4" type="video/mp4" />
+    </video>
   </div>
+
+  <a class="como-funciona__link" href="https://wa.me/5511961205743" target="_blank" rel="noopener">Falar com a psicóloga →</a>
 </section>
 
 <style>
@@ -104,6 +110,12 @@ const passos = [
 .video-wrap {
   display: flex; justify-content: center;
 }
+.como-funciona__link {
+  display: inline-block; margin-top: 28px;
+  font-size: 15px; font-weight: 500; text-decoration: none;
+  color: var(--terracota-escuro);
+}
+.como-funciona__link:hover, .como-funciona__link:focus-visible { text-decoration: underline; }
 .como-funciona__video {
   width: 100%;
   max-width: 960px;
@@ -123,6 +135,8 @@ const passos = [
 <script>
   const v = document.querySelector<HTMLVideoElement>('[data-video-scroll]');
   if (v) {
+    const mobile = window.matchMedia('(max-width: 860px)').matches;
+    v.poster = mobile ? v.dataset.posterMobile ?? v.poster : v.dataset.posterDesktop ?? v.poster;
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!reduced) {
       const obs = new IntersectionObserver(([e]) => {
