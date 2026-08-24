@@ -24,8 +24,8 @@ const faqs = [
 ---
 <section class="faq" id="faq">
   <p class="kicker">Dúvidas comuns</p>
-  <h2 class="faq__titulo">Perguntas frequentes</h2>
-  <div class="faq__lista">
+  <h2 class="faq__titulo" data-reveal>Perguntas frequentes</h2>
+  <div class="faq__lista" data-reveal>
     {faqs.map((f) => (
       <details class="faq__item">
         <summary class="faq__pergunta">{f.pergunta}</summary>

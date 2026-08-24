@@ -15,9 +15,9 @@ const temas = [
 ---
 <section class="atendimento" id="atendimento">
   <p class="kicker">Atendimento</p>
-  <h2 class="atendimento__titulo">Tratamento e acolhimento a questões como:</h2>
+  <h2 class="atendimento__titulo" data-reveal>Tratamento e acolhimento a questões como:</h2>
   <p class="atendimento__sub">Se alguma dessas frases parece com a sua semana, é um bom lugar pra começar.</p>
-  <div class="atendimento__grid">
+  <div class="atendimento__grid" data-reveal>
     {temas.map((t) => (
       <a class="card" href={WHATSAPP} target="_blank" rel="noopener">
         <h3 class="card__titulo">{t.titulo}</h3>

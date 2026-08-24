@@ -28,8 +28,8 @@ const servicos = [
 ---
 <section class="servicos" id="servicos">
   <p class="kicker">Serviços</p>
-  <h2 class="servicos__titulo">Como eu posso te acompanhar</h2>
-  <div class="servicos__grid">
+  <h2 class="servicos__titulo" data-reveal>Como eu posso te acompanhar</h2>
+  <div class="servicos__grid" data-reveal>
     {servicos.map((s) => (
       <div class:list={['card', { 'card--destaque': s.destaque }]}>
         {s.destaque && <span class="card__selo">Com laudo</span>}
