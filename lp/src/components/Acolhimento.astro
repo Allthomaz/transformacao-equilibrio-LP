@@ -1,0 +1,70 @@
+---
+import { Image } from 'astro:assets';
+import consultorio from '../assets/imagens/consultorio.jpeg';
+---
+<section class="acolhimento">
+  <Image
+    class="acolhimento__bg"
+    src={consultorio}
+    alt="Consultório acolhedor da psicóloga Andréa Rosa Souza, no Tatuapé"
+    widths={[720, 1080, 1440, 1920]}
+    sizes="100vw"
+    loading="lazy"
+  />
+  <div class="acolhimento__overlay"></div>
+  <div class="acolhimento__conteudo">
+    <p class="frase">Um lugar onde você pode chegar <em>sem máscara</em>, falar o que não cabe em mensagem e ser ouvido sem pressa.</p>
+    <span class="assinatura">Transformação &amp; Equilíbrio</span>
+  </div>
+</section>
+<style>
+.acolhimento {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.acolhimento__bg {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: saturate(0.92) brightness(0.94);
+}
+.acolhimento__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(transparent 40%, rgba(26,26,26,0.55));
+  pointer-events: none;
+}
+.acolhimento__conteudo {
+  position: relative; z-index: 2;
+  max-width: 560px;
+  padding: 0 8vw 8vh;
+}
+.frase {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(32px, 4vw, 56px);
+  line-height: 1.14;
+  color: #FBF8F2;
+  text-shadow: 0 2px 22px rgba(26,26,26,0.45), 0 1px 3px rgba(26,26,26,0.35);
+}
+.frase em { font-style: italic; color: #E8C9A8; }
+.assinatura {
+  margin-top: 32px;
+  font-size: 14px; font-weight: 400;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: rgba(251,248,242,0.92);
+  text-shadow: 0 1px 10px rgba(26,26,26,0.5);
+  display: inline-flex; align-items: center; gap: 12px;
+}
+.assinatura::before,
+.assinatura::after {
+  content: ''; width: 30px; height: 1px;
+  background: rgba(251,248,242,0.7);
+}
+@media (max-width: 640px) {
+  .acolhimento { min-height: 74vh; }
+  .acolhimento__conteudo { padding: 0 7vw 7vh; }
+}
+</style>

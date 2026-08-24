@@ -1,0 +1,65 @@
+---
+const faqs = [
+  {
+    pergunta: 'O atendimento é particular ou aceita convênios?',
+    resposta: 'O atendimento é apenas particular. Você pode pagar via PIX, cartão de crédito, cartão de débito, transferência ou boleto — e é emitido recibo para você solicitar reembolso junto ao seu plano de saúde.',
+  },
+  {
+    pergunta: 'Como funciona o atendimento online?',
+    resposta: 'Com a mesma qualidade do presencial: a sessão acontece por videochamada, do lugar onde você estiver. Basta um lugar com um mínimo de privacidade e conexão com internet.',
+  },
+  {
+    pergunta: 'Atende adolescentes?',
+    resposta: 'Sim. Atendo jovens a partir dos 14 anos, além de adultos e casais.',
+  },
+  {
+    pergunta: 'Quanto custa a sessão?',
+    resposta: 'Os valores são informados diretamente pelo WhatsApp, sem compromisso. Me conte o que você está procurando e eu te explico com calma.',
+  },
+  {
+    pergunta: 'Como é a primeira sessão?',
+    resposta: 'Não é prova, não é interrogatório, não precisa ter nada "preparado" pra dizer. Você chega (ou entra na chamada), conta o que te trouxe até ali do jeito que conseguir — e se não souber por onde começar, eu conduzo. Muita gente sai da primeira sessão dizendo que era mais leve do que imaginava.',
+  },
+];
+---
+<section class="faq" id="faq">
+  <p class="kicker">Dúvidas comuns</p>
+  <h2 class="faq__titulo">Perguntas frequentes</h2>
+  <div class="faq__lista">
+    {faqs.map((f) => (
+      <details class="faq__item">
+        <summary class="faq__pergunta">{f.pergunta}</summary>
+        <p class="faq__resposta">{f.resposta}</p>
+      </details>
+    ))}
+  </div>
+</section>
+<style>
+.faq { background: var(--bg); padding: 12vh 5vw; text-align: center; }
+.kicker {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-size: 13px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--terracota); margin-bottom: 22px;
+}
+.kicker::before, .kicker::after { content: ''; display: block; width: 34px; height: 1.5px; background: var(--terracota); }
+.faq__titulo { font-family: var(--serif); font-weight: 400; font-size: clamp(34px, 4vw, 54px); line-height: 1.12; margin-bottom: 48px; }
+.faq__lista { max-width: 760px; margin: 0 auto; text-align: left; }
+.faq__item { border-bottom: 1px solid var(--borda); }
+.faq__pergunta {
+  list-style: none;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between; gap: 18px;
+  font-size: 16px; font-weight: 500; line-height: 1.5;
+  padding: 20px 4px;
+}
+.faq__pergunta::-webkit-details-marker { display: none; }
+.faq__pergunta::after {
+  content: '+';
+  flex-shrink: 0;
+  font-family: var(--sans); font-size: 20px; font-weight: 300;
+  color: var(--terracota);
+  transition: transform .25s ease;
+}
+.faq__item[open] .faq__pergunta::after { transform: rotate(45deg); }
+.faq__resposta { font-size: 15px; font-weight: 300; line-height: 1.7; color: var(--texto-suave); padding: 0 4px 22px; max-width: 640px; }
+</style>

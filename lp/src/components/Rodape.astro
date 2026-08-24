@@ -1,0 +1,60 @@
+---
+const WHATSAPP = 'https://wa.me/5511961205743';
+const DOCTORALIA = 'https://www.doctoralia.com.br/andrea-rosa-souza/psicologo/sao-paulo';
+---
+<footer class="rodape">
+  <div class="rodape__grid">
+    <div class="rodape__col">
+      <p class="rodape__marca">Transformação &amp; Equilíbrio</p>
+      <p class="rodape__frase">Cuidar de você é transformar sua vida.</p>
+    </div>
+    <div class="rodape__col">
+      <p class="rodape__rotulo">Contato</p>
+      <ul class="rodape__lista">
+        <li><a href={WHATSAPP} target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a href={DOCTORALIA} target="_blank" rel="noopener">Doctoralia</a></li>
+        <li>Rua Apucarana — Tatuapé, São Paulo/SP</li>
+      </ul>
+    </div>
+    <div class="rodape__col">
+      <p class="rodape__rotulo">Registro</p>
+      <ul class="rodape__lista">
+        <li>Andréa Rosa Souza · Psicóloga clínica</li>
+        <li>CRP 06/136303</li>
+        <li>CNPJ 36.940.050/0001-04</li>
+      </ul>
+    </div>
+  </div>
+  <p class="rodape__linha">© 2026 Transformação &amp; Equilíbrio · Feito com cuidado</p>
+</footer>
+<style>
+.rodape { background: var(--texto); color: rgba(251,248,242,0.85); padding: 64px 5vw 32px; }
+.rodape__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+  max-width: 1100px;
+  margin: 0 auto 44px;
+}
+.rodape__marca { font-family: var(--serif); font-weight: 400; font-size: 24px; color: #FBF8F2; margin-bottom: 10px; }
+.rodape__frase { font-size: 14.5px; font-weight: 300; line-height: 1.6; color: rgba(251,248,242,0.65); }
+.rodape__rotulo {
+  font-size: 12px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase;
+  color: rgba(251,248,242,0.55);
+  margin-bottom: 14px;
+}
+.rodape__lista { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.rodape__lista li { font-size: 14.5px; font-weight: 300; line-height: 1.6; }
+.rodape__lista a { color: rgba(251,248,242,0.85); text-decoration: none; }
+.rodape__lista a:hover, .rodape__lista a:focus-visible { text-decoration: underline; color: #FBF8F2; }
+.rodape__linha {
+  text-align: center;
+  font-size: 13px; font-weight: 300;
+  color: rgba(251,248,242,0.5);
+  border-top: 1px solid rgba(251,248,242,0.12);
+  padding-top: 26px;
+}
+@media (max-width: 760px) {
+  .rodape__grid { grid-template-columns: 1fr; gap: 30px; }
+}
+</style>
