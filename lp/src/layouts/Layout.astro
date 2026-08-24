@@ -2,6 +2,33 @@
 import '../styles/tokens.css';
 interface Props { title: string; description: string; }
 const { title, description } = Astro.props;
+
+// TODO: confirmar domínio final antes do deploy (Task 10)
+const SITE = 'https://transformacaoeequilibrio.com.br';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Psychologist',
+  name: 'Andréa Rosa Souza',
+  alternateName: 'Transformação & Equilíbrio',
+  url: SITE,
+  telephone: '+5511961205743',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Rua Apucarana',
+    addressLocality: 'Tatuapé, São Paulo',
+    addressRegion: 'SP',
+    addressCountry: 'BR',
+  },
+  identifier: 'CRP 06/136303',
+  priceRange: '$$',
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5.0',
+    reviewCount: '70',
+    bestRating: '5',
+  },
+};
 ---
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -11,6 +38,19 @@ const { title, description } = Astro.props;
   <title>{title}</title>
   <meta name="description" content={description} />
   <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="canonical" href={SITE + '/'} />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Transformação & Equilíbrio" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={SITE + '/og.png'} />
+  <meta property="og:url" content={SITE + '/'} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={SITE + '/og.png'} />
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet" />
