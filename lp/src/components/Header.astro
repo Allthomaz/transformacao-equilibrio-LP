@@ -1,0 +1,28 @@
+---
+import logo from '../assets/imagens/logo-fundo-criativo-02.png';
+import { Image } from 'astro:assets';
+const WHATSAPP = 'https://wa.me/5511961205743';
+---
+<header class="header">
+  <div class="header__inner">
+    <a href="#topo" class="header__logo" aria-label="Transformação & Equilíbrio — início">
+      <Image src={logo} alt="Logo Transformação & Equilíbrio" width={180} height={60} />
+    </a>
+    <nav class="header__nav" aria-label="Principal">
+      <a href="#atendimento">Atendimento</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn--header" href={WHATSAPP} target="_blank" rel="noopener">Agendar conversa</a>
+  </div>
+</header>
+<style>
+.header { position: sticky; top: 0; z-index: 50; background: rgba(245,241,234,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--borda); }
+.header__inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 14px 5vw; }
+.header__logo img { height: 52px; width: auto; }
+.header__nav { display: flex; gap: 28px; }
+.header__nav a { font-size: 14px; font-weight: 400; color: var(--texto-suave); text-decoration: none; }
+.header__nav a:hover { color: var(--terracota); }
+@media (max-width: 760px) { .header__nav { display: none; } }
+</style>

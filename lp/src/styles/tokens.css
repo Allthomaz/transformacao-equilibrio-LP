@@ -20,3 +20,15 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 img, video { max-width: 100%; display: block; }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 28px; border-radius: 999px;
+  font-family: var(--sans); font-size: 15px; font-weight: 500; text-decoration: none;
+  background: var(--terracota); color: #fff;
+  box-shadow: 0 8px 24px rgba(178,95,63,0.35);
+  transition: background .2s ease, transform .2s ease;
+}
+.btn:hover { background: var(--terracota-escuro); transform: translateY(-2px); }
+.btn--outline { background: transparent; color: var(--terracota); border: 1.5px solid var(--terracota); box-shadow: none; }
+.btn--outline:hover { background: rgba(178,95,63,0.08); }
+.btn--header { padding: 10px 20px; font-size: 14px; }
