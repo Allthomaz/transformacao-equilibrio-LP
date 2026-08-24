@@ -1,0 +1,69 @@
+---
+const DOCTORALIA = 'https://www.doctoralia.com.br/andrea-rosa-souza/psicologo/sao-paulo';
+const depoimentos = [
+  { texto: 'Muito atenciosa e acolhedora, com sensibilidade e clareza.' },
+  { texto: 'Escuta ativa... processo terapêutico sério, humano e transformador.' },
+  { texto: 'Profissional competente e direta. Consultório bem localizado, pontual.' },
+];
+---
+<section class="prova" id="prova-social">
+  <div class="prova__grid">
+    <div class="prova__nota">
+      <p class="prova__numero">5,0</p>
+      <div class="prova__estrelas" aria-label="Nota 5 de 5">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+      </div>
+      <p class="prova__contagem">70 avaliações no Doctoralia</p>
+      <div class="prova__selos">
+        <span class="prova__selo">Doctoralia Best Quality 2019</span>
+        <span class="prova__selo">Doctoralia Best Quality 2020</span>
+      </div>
+    </div>
+    <div class="prova__depoimentos">
+      {depoimentos.map((d) => (
+        <blockquote class="prova__quote">
+          <p>{d.texto}</p>
+          <cite>Paciente no Doctoralia</cite>
+        </blockquote>
+      ))}
+      <a class="prova__link" href={DOCTORALIA} target="_blank" rel="noopener">Ver todas as avaliações →</a>
+    </div>
+  </div>
+</section>
+<style>
+.prova { max-width: 1200px; margin: 0 auto; padding: 12vh 5vw; }
+.prova__grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 5vw; align-items: start; }
+.prova__nota {
+  background: var(--superficie); border: 1px solid var(--borda); border-radius: 24px;
+  padding: 48px 40px; text-align: center;
+}
+.prova__numero { font-family: var(--serif); font-size: clamp(72px, 8vw, 96px); line-height: 1; color: var(--terracota); }
+.prova__estrelas { display: flex; justify-content: center; gap: 6px; margin: 18px 0 10px; }
+.prova__estrelas svg { width: 22px; height: 22px; fill: var(--terracota); }
+.prova__contagem { font-size: 15px; color: var(--texto-suave); margin-bottom: 24px; }
+.prova__selos { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.prova__selo {
+  font-size: 12.5px; font-weight: 500; letter-spacing: 0.3px;
+  color: var(--verde); border: 1.5px solid var(--verde);
+  border-radius: 999px; padding: 7px 16px;
+}
+.prova__depoimentos { display: flex; flex-direction: column; gap: 28px; }
+.prova__quote { position: relative; padding-left: 54px; }
+.prova__quote::before {
+  content: '\201C'; position: absolute; left: 0; top: -14px;
+  font-family: var(--serif); font-size: 72px; line-height: 1; color: var(--terracota); opacity: 0.35;
+}
+.prova__quote p { font-family: var(--serif); font-size: clamp(20px, 2vw, 26px); line-height: 1.4; }
+.prova__quote cite { display: block; margin-top: 10px; font-style: normal; font-family: var(--sans); font-size: 13px; color: var(--texto-suave); }
+.prova__link {
+  align-self: flex-start; font-size: 14px; font-weight: 500;
+  color: var(--terracota); text-decoration: none; border-bottom: 1px solid transparent;
+  transition: border-color .2s ease;
+}
+.prova__link:hover { border-color: var(--terracota); }
+@media (max-width: 900px) { .prova__grid { grid-template-columns: 1fr; gap: 40px; } }
+</style>
