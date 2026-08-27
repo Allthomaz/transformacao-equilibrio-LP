@@ -9,15 +9,17 @@ const DOCTORALIA = 'https://www.doctoralia.com.br/andrea-rosa-souza/psicologo/sa
     <p class="kicker">Psicóloga clínica · Online e presencial · Tatuapé</p>
     <h1 class="hero__titulo">
       <span aria-hidden="true">Você não precisa mais carregar isso <span class="hero__palavra">sozinho</span></span>
-      <span class="visually-hidden">Você não precisa mais carregar isso sozinho, sozinha ou sozinhx.</span>
+      <span class="visually-hidden">Você não precisa mais carregar isso sozinho, sozinha.</span>
     </h1>
-    <p class="hero__sub">Se as noites viraram revirar na cama, os dias viraram piloto automático e a frase "vou resolver isso depois" já dura meses, existe um lugar pra destravar isso com calma. Atendimento presencial no Tatuapé ou online, com escuta e embasamento técnico.</p>
+    <p class="hero__sub hero__sub--desktop">Se as noites viraram revirar na cama, os dias viraram piloto automático e a frase "vou resolver isso depois" já dura meses, existe um lugar pra destravar isso com calma. Atendimento presencial no Tatuapé ou online, com escuta e embasamento técnico.</p>
+    <p class="hero__sub hero__sub--mobile">Psicoterapia acolhedora, presencial no Tatuapé ou online, para adultos, jovens a partir de 14 anos e casais.</p>
     <p class="hero__publico">Adultos · Jovens 14+ · Casais</p>
     <div class="hero__ctas">
       <a class="btn" href={WHATSAPP} target="_blank" rel="noopener">Falar com a psicóloga</a>
       <a class="btn btn--outline" href={DOCTORALIA} target="_blank" rel="noopener">Verificar horários</a>
     </div>
     <p class="hero__micro">Sem compromisso · Respondo pessoalmente</p>
+    <p class="hero__contexto-mobile">Se as noites viraram revirar na cama, os dias viraram piloto automático e a frase "vou resolver isso depois" já dura meses, existe um lugar pra destravar isso com calma.</p>
   </div>
   <div class="hero__foto">
     <Image src={retrato} alt="Andréa Rosa Souza, psicóloga clínica" widths={[480, 640, 720, 960]} sizes="(max-width: 520px) calc(100vw - 32px), (max-width: 900px) 360px, 480px" loading="eager" fetchpriority="high" />
@@ -45,8 +47,9 @@ const DOCTORALIA = 'https://www.doctoralia.com.br/andrea-rosa-souza/psicologo/sa
 }
 .hero__palavra::after { content: '|'; display: inline-block; margin-left: .04em; color: var(--terracota-escuro); font-style: normal; font-weight: 300; animation: cursor-pisca .82s steps(1, end) infinite; }
 @keyframes cursor-pisca { 0%, 48% { opacity: 1; } 49%, 100% { opacity: 0; } }
-.hero__publico { color: #464646; font-size: 14px; font-weight: 600; letter-spacing: .025em; margin-top: -18px; margin-bottom: 34px; text-shadow: 0 1px 4px rgba(70,70,70,.12); }
 .hero__sub { font-size: 17px; font-weight: 300; line-height: 1.65; color: var(--texto-suave); max-width: 480px; margin-bottom: 34px; }
+.hero__sub--mobile, .hero__contexto-mobile { display: none; }
+.hero__publico { color: #464646; font-size: 14px; font-weight: 600; letter-spacing: .025em; margin-top: -18px; margin-bottom: 34px; text-shadow: 0 1px 4px rgba(70,70,70,.12); }
 .hero__ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 16px; }
 .hero__micro { font-size: 13px; color: var(--texto-suave); }
 .hero__foto { position: relative; aspect-ratio: 4 / 5; width: 100%; max-width: 480px; border: 1.6px solid rgba(255,255,255,0.85); outline: 1px solid rgba(255,255,255,0.45); outline-offset: 6px; border-radius: 24px; box-shadow: 0 24px 60px rgba(26,26,26,0.12), 0 0 0 10px rgba(255,255,255,0.18); }
@@ -54,13 +57,49 @@ const DOCTORALIA = 'https://www.doctoralia.com.br/andrea-rosa-souza/psicologo/sa
 .hero__foto::after { content: ''; position: absolute; inset: 0; border-radius: 22px; box-shadow: inset 0 0 0 6px rgba(255,255,255,0.08); pointer-events: none; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 @media (max-width: 900px) { .hero { grid-template-columns: 1fr; } .hero__foto { max-width: 360px; margin: 0 auto; } }
-@media (max-width: 520px) { .hero__palavra { display: block; min-height: 1.08em; padding-left: clamp(.25rem, 1.5vw, .5rem); } }
+@media (max-width: 640px) {
+  .hero {
+    grid-template-columns: 1fr; align-items: initial; gap: 0;
+    padding: 24px 20px 48px;
+  }
+  .hero__texto { display: contents; }
+  .hero__foto {
+    order: 1; width: 100%; height: 246px; max-width: none; aspect-ratio: auto;
+    margin: 0 0 27px; border-radius: 24px;
+  }
+  .hero__foto img { object-position: center 18%; border-radius: 22px; }
+  .hero .kicker {
+    order: 2; margin-bottom: 15px;
+    font-size: 10.5px; line-height: 1.45; letter-spacing: .17em;
+  }
+  .hero .kicker::before { width: 24px; height: 1px; }
+  .hero__titulo {
+    order: 3; margin-bottom: 18px;
+    font-size: clamp(38px, 10.6vw, 46px); line-height: .99;
+  }
+  .hero__palavra { display: block; min-height: 1.08em; padding-left: 0; }
+  .hero__sub--desktop, .hero__publico { display: none; }
+  .hero__sub--mobile {
+    display: block; order: 4; max-width: none; margin-bottom: 0;
+    font-size: 15px; line-height: 1.55;
+  }
+  .hero__ctas { display: contents; }
+  .hero__ctas .btn { width: 100%; min-height: 49px; justify-content: center; }
+  .hero__ctas .btn:first-child { order: 5; margin-top: 18px; }
+  .hero__micro { order: 6; margin-top: 11px; text-align: center; font-size: 11px; }
+  .hero__contexto-mobile {
+    display: block; order: 7; margin-top: 34px; padding-top: 26px;
+    border-top: 1px solid var(--borda); color: var(--texto-suave);
+    font-size: 14px; font-weight: 300; line-height: 1.65;
+  }
+  .hero__ctas .btn--outline { order: 8; margin-top: 18px; }
+}
 @media (prefers-reduced-motion: reduce) { .hero__palavra::after { animation: none; opacity: 1; } }
 </style>
 <script>
   const palavra = document.querySelector<HTMLElement>('.hero__palavra');
   if (palavra && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const palavras = ['sozinho', 'sozinha', 'sozinhx'];
+    const palavras = ['sozinho', 'sozinha'];
     const esperar = (ms: number) => new Promise((resolve) => window.setTimeout(resolve, ms));
     const digitar = async (texto: string) => {
       palavra.textContent = '';

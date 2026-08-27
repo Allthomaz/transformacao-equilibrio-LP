@@ -12,7 +12,7 @@ Landing page de conversão para a psicóloga clínica Andréa Rosa Souza (CRP 06
 
 | Camada | Decisão |
 |---|---|
-| Framework | **Astro 5** — componentes por seção, zero JS por padrão, deploy Vercel |
+| Framework | **Astro (versão atual — 7 no scaffold)** — componentes por seção, zero JS por padrão, deploy Vercel |
 | CSS | Puro com design tokens em `:root` (paleta + tipografia) |
 | Vídeo "Como funciona" | **Remotion** (skill `remotion-motion-graphics` em `.claude/skills/`) → renderiza MP4/WebM → `<video autoplay muted loop playsinline>` com play on-scroll |
 | Fontes | DM Serif Display (títulos) + DM Sans (corpo) — Google Fonts, preconnect + `font-display: swap` (mesma tipografia de hector.psc.br, confirmada no CSS compilado) |
@@ -45,7 +45,7 @@ Landing page de conversão para a psicóloga clínica Andréa Rosa Souza (CRP 06
    - Relacionamento abusivo — "Relações que machucam sem nomear"
    - Casal — "Conflitos e distância na relação"
    - Autoconhecimento — "Padrões que se repetem nas suas escolhas"
-   - CTA final: "Não se identificou? A conversa é o começo" → WhatsApp
+   - CTA final: "Se identificou? A conversa é o começo" → WhatsApp
 6. **Serviços** (reposicionamento do menu Doctoralia) — 4 cards: Psicoterapia Individual (adultos e jovens ≥14, presencial/online; engloba ansiedade, depressão, fobias, traumas, TOC, bipolar, borderline — citados na copy interna) · Terapia de Casal · Avaliação p/ Cirurgia Bariátrica com laudo (nicho, SEO local) · Avaliação Psicológica. Badges "Online" e "Presencial · Tatuapé" nos cards. Sem preços na LP.
 7. **Acolhimento** — evolução da seção aprovada: foto `consultorio.jpeg` full-bleed, **texto reposicionado** (descentralizado, menor, para a foto respirar) + frase serifa clara + assinatura "Transformação & Equilíbrio"
 8. **Sobre** — texto aprovado (briefing §8) + +10 anos · Rua Apucarana, Tatuapé · CRP

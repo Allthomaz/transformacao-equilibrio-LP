@@ -10,23 +10,32 @@ const temas = [
   { titulo: 'Borderline', frase: 'Relações que começam intensas e terminam em medo de ser abandonado, e uma sensação de vazio que nenhuma distração preenche.' },
   { titulo: 'Relacionamento abusivo', frase: 'Andar em ovos dentro de casa, reler mensagens pra entender o que deu errado, duvidar da própria memória.' },
   { titulo: 'Casal', frase: 'Vocês dividem o mesmo sofá e celulares diferentes. Brigas que começam na louça e terminam em silêncio por dias.' },
-  { titulo: 'Autoconhecimento', frase: 'Terminar relações, empregos e amizades que pareciam diferentes, e perceber que o final foi sempre o mesmo.' },
+  { titulo: 'Autoconhecimento', frase: 'Perceber que, mesmo mudando as pessoas e os lugares, certos desfechos se repetem, e começar a investigar qual é a sua participação nesse padrão.' },
 ];
 ---
 <section class="atendimento" id="atendimento">
   <p class="kicker">Atendimento</p>
   <h2 class="atendimento__titulo" data-reveal>Tratamento e acolhimento a questões como:</h2>
   <p class="atendimento__sub">Se alguma dessas frases parece com a sua semana, é um bom lugar pra começar.</p>
-  <div class="atendimento__grid" data-reveal>
-    {temas.map((t) => (
-      <a class="card" href={WHATSAPP} target="_blank" rel="noopener">
+  <div class="atendimento__grid" id="questoes-atendidas" data-reveal>
+    {temas.map((t, index) => (
+      <a class:list={['card', { 'card--mobile-extra': index >= 4 }]} href={WHATSAPP} target="_blank" rel="noopener">
         <h3 class="card__titulo">{t.titulo}</h3>
         <p class="card__frase">{t.frase}</p>
       </a>
     ))}
   </div>
+  <button
+    class="atendimento__expandir"
+    type="button"
+    aria-expanded="false"
+    aria-controls="questoes-atendidas"
+  >
+    <span class="atendimento__expandir-texto">Ver mais questões que acompanho</span>
+    <span class="atendimento__expandir-icone" aria-hidden="true"></span>
+  </button>
   <div class="atendimento__cta">
-    <p class="atendimento__cta-frase">Não se identificou? A conversa é o começo.</p>
+    <p class="atendimento__cta-frase">Se identificou? A conversa é o começo.</p>
     <a class="atendimento__cta-link" href={WHATSAPP} target="_blank" rel="noopener">Me conte o que você está vivendo →</a>
   </div>
 </section>
@@ -70,9 +79,78 @@ const temas = [
 @keyframes shine { to { transform: skewX(-20deg) translateX(340%); } }
 .card__titulo { font-family: var(--serif); font-weight: 400; font-size: 22px; margin-bottom: 10px; }
 .card__frase { font-size: 14px; font-weight: 300; line-height: 1.6; color: var(--texto-suave); }
+.atendimento__expandir { display: none; }
 .atendimento__cta { margin-top: 52px; }
 .atendimento__cta-frase { font-family: var(--serif); font-style: italic; font-size: 24px; margin-bottom: 14px; }
 .atendimento__cta-link { color: var(--terracota-escuro); font-weight: 500; text-decoration: none; }
 .atendimento__cta-link:hover, .atendimento__cta-link:focus-visible { text-decoration: underline; }
-@media (prefers-reduced-motion: reduce) { .card:hover { transform: none; } .card::before { display: none; } }
+@media (min-width: 1100px) {
+  .atendimento__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .atendimento__grid .card:nth-child(9) { grid-column: 2; }
+}
+@media (max-width: 640px) {
+  .atendimento { padding: 10vh 20px; }
+  .atendimento__titulo { font-size: clamp(32px, 10vw, 42px); }
+  .atendimento__sub { font-size: 16px; line-height: 1.6; margin-bottom: 34px; }
+  .atendimento__grid { grid-template-columns: 1fr; gap: 14px; }
+  .card { padding: 24px 20px; }
+  .atendimento.is-collapsible:not(.is-expanded) .card--mobile-extra { display: none; }
+  .atendimento.is-collapsible.is-expanded .card--mobile-extra { animation: revelar-card .38s cubic-bezier(.22,1,.36,1) both; }
+  .atendimento.is-collapsible .atendimento__expandir {
+    display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+    width: 100%; min-height: 50px; margin: 22px auto 0; padding: 12px 20px;
+    border: 1px solid rgba(150,73,46,.32); border-radius: 999px;
+    background: rgba(251,248,242,.7); color: var(--terracota-escuro);
+    font: 500 14px/1.35 var(--sans); cursor: pointer;
+    box-shadow: 0 8px 24px rgba(26,26,26,.04);
+    transition: background .2s ease, border-color .2s ease, transform .2s ease;
+  }
+  .atendimento__expandir:hover, .atendimento__expandir:focus-visible {
+    background: var(--superficie); border-color: var(--terracota); transform: translateY(-1px);
+  }
+  .atendimento__expandir-icone {
+    width: 9px; height: 9px; flex: 0 0 auto;
+    border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
+    transform: translateY(-2px) rotate(45deg);
+    transition: transform .25s cubic-bezier(.22,1,.36,1);
+  }
+  .atendimento.is-expanded .atendimento__expandir-icone { transform: translateY(2px) rotate(225deg); }
+  .atendimento__cta { margin-top: 42px; }
+  @keyframes revelar-card {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card:hover { transform: none; }
+  .card::before { display: none; }
+  .atendimento.is-collapsible.is-expanded .card--mobile-extra { animation: none; }
+  .atendimento__expandir, .atendimento__expandir-icone { transition: none !important; }
+}
 </style>
+<script>
+  const secao = document.querySelector<HTMLElement>('.atendimento');
+  const botao = secao?.querySelector<HTMLButtonElement>('.atendimento__expandir');
+  const texto = botao?.querySelector<HTMLElement>('.atendimento__expandir-texto');
+  const mobile = window.matchMedia('(max-width: 640px)');
+
+  if (secao && botao && texto) {
+    const atualizarResponsividade = () => {
+      secao.classList.toggle('is-collapsible', mobile.matches);
+      if (!mobile.matches) {
+        secao.classList.remove('is-expanded');
+        botao.setAttribute('aria-expanded', 'false');
+        texto.textContent = 'Ver mais questões que acompanho';
+      }
+    };
+
+    botao.addEventListener('click', () => {
+      const expandido = secao.classList.toggle('is-expanded');
+      botao.setAttribute('aria-expanded', String(expandido));
+      texto.textContent = expandido ? 'Mostrar menos questões' : 'Ver mais questões que acompanho';
+    });
+
+    atualizarResponsividade();
+    mobile.addEventListener('change', atualizarResponsividade);
+  }
+</script>

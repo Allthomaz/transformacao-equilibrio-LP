@@ -20,7 +20,7 @@
 
 ### Subtítulo
 
-> Se as noites viraram revirar na cama, os dias viram piloto automático e a frase "vou resolver isso depois" já dura meses — existe um lugar pra destravar isso com calma. Atendimento presencial no Tatuapé ou online, com escuta e embasamento técnico. Adultos, jovens a partir de 14 anos e casais.
+> Se as noites viraram revirar na cama, os dias viram piloto automático e a frase "vou resolver isso depois" já dura meses — existe um lugar pra destravar isso com calma. Atendimento presencial no Tatuapé ou online, com escuta e embasamento técnico. Adultos · Jovens a partir de 14 anos · Casais
 
 *Microcopy sob os CTAs:* Sem compromisso · Respondo pessoalmente
 
@@ -43,7 +43,7 @@
 | 7 | Borderline | Relações que começam intensas e terminam em medo de ser abandonado — e uma sensação de vazio que nenhuma distraição preenche. |
 | 8 | Relacionamento abusivo | Andar em ovos dentro de casa, reler mensagens pra entender o que deu errado, duvidar da própria memória. |
 | 9 | Casal | Vocês dividem o mesmo sofá e celulares diferentes. Brigas que começam na louça e terminam em silêncio por dias. |
-| 10 | Autoconhecimento | Terminar relações, empregos e amizades que pareciam diferentes — e perceber que o final foi sempre o mesmo. |
+| 10 | Autoconhecimento | Perceber que, mesmo mudando as pessoas e os lugares, certos desfechos se repetem, e começar a investigar qual é a sua participação nesse padrão. |
 
 *CTA da seção:* Não se identificou? A conversa é o começo.
 

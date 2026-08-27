@@ -5,6 +5,8 @@ const { title, description } = Astro.props;
 
 // TODO: confirmar domínio final antes do deploy (Task 10)
 const SITE = 'https://transformacaoeequilibrio.com.br';
+const GTM_ID = 'GTM-KTXQSJD2';
+const GOOGLE_ADS_ID = 'AW-374411592';
 
 const schema = {
   '@context': 'https://schema.org',
@@ -51,14 +53,35 @@ const schema = {
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={SITE + '/og.png'} />
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  <script is:inline define:vars={{ GTM_ID }}>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'gtm.start': new Date().getTime(),
+      event: 'gtm.js',
+    });
+    const firstScript = document.getElementsByTagName('script')[0];
+    const gtmScript = document.createElement('script');
+    gtmScript.async = true;
+    gtmScript.src = `https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`;
+    firstScript.parentNode.insertBefore(gtmScript, firstScript);
+  </script>
+  <script async src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`}></script>
+  <script is:inline define:vars={{ GOOGLE_ADS_ID }}>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){window.dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', GOOGLE_ADS_ID);
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=Fraunces:ital,opsz,wght@1,9..144,600&display=swap" rel="stylesheet" />
   <slot name="head" />
 </head>
 <body>
+<noscript><iframe src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`} height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
 <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
 <slot />
 <script src="../scripts/animar.ts"></script>
+<script src="../scripts/analytics.ts"></script>
 </body>
 </html>

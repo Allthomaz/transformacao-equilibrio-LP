@@ -81,7 +81,7 @@ Trechos (verificados):
 **Hero**
 - Kicker: "Psicóloga clínica · Online e presencial · Tatuapé"
 - Título (4 opções, testar): A) "Você não precisa carregar isso sozinho." · B) "Tudo bem não estar bem." · C) "Quando o peso vira palavra, o equilíbrio faz sentido de novo." · D) "O primeiro passo pode ser uma conversa."
-- Subtítulo: "Atendimento acolhedor e com embasamento técnico, presencial no Tatuapé ou online. Adultos, jovens a partir de 14 anos e casais."
+- Subtítulo: "Atendimento acolhedor e com embasamento técnico, presencial no Tatuapé ou online. Adultos  jovens a partir de 14 anos e casais."
 - CTA duplo: WhatsApp em destaque com verbo de baixa pressão ("Falar com a psicóloga") + secundário Doctoralia ("Verificar horários")
 
 **Regras de conversão validadas pelas duas pesquisas**
@@ -92,7 +92,7 @@ Trechos (verificados):
 5. Isca digital (desafio de meditação/newsletter) no fim, para o público que não está pronto pra agendar
 
 **Texto "Sobre" aprovado para uso (base: site oficial)**
-> Andréa é psicóloga clínica (CRP 06/136303) com formação em Psicologia Analítica, Terapia do Esquema (Grupo Wainer/EUA) e especialização em Dependência Química (UNIFESP), além de estudos em Perdas e Luto. Atua com terapia para adultos, jovens a partir de 14 anos e casais.
+> Andréa é psicóloga clínica (CRP 06/136303) com formação em Psicologia Analítica, Terapia do Esquema (Grupo Wainer/EUA) e especialização em Dependência Química (UNIFESP), além de estudos em Perdas e Luto. Atua com terapia para . Adultos · Jovens a partir de 14 anos · Casais
 > Atende no Tatuapé (SP), em consultório acolhedor, e também online. Sua abordagem combina embasamento técnico com empatia: escuta ativa, respeito ao ritmo de cada pessoa e apoio para reencontrar equilíbrio sem juízo de valor.
 > Em cada sessão, você encontra escuta treinada e ferramentas práticas para lidar com o seu desafio — no seu tempo.
 > (incrementar com: +10 anos de experiência · Rua Apucarana, Tatuapé)
