@@ -2,8 +2,8 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
-// TODO: confirmar domínio final antes do deploy (Task 10)
-const SITE = 'https://transformacaoeequilibrio.com.br';
+// Usar o domínio provisório da Vercel até o domínio próprio apontar para este projeto.
+const SITE = 'https://transformacao-equilibrio-lp.vercel.app';
 
 // https://astro.build/config
 export default defineConfig({

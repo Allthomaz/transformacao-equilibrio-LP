@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://transformacaoeequilibrio.com.br/sitemap-index.xml
+Sitemap: https://transformacao-equilibrio-lp.vercel.app/sitemap-index.xml

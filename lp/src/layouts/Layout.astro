@@ -3,8 +3,9 @@ import '../styles/tokens.css';
 interface Props { title: string; description: string; }
 const { title, description } = Astro.props;
 
-// TODO: confirmar domínio final antes do deploy (Task 10)
-const SITE = 'https://transformacaoeequilibrio.com.br';
+// Usar o domínio provisório da Vercel até o domínio próprio apontar para este projeto.
+const SITE = 'https://transformacao-equilibrio-lp.vercel.app';
+const OG_IMAGE = 'https://transformacao-equilibrio-lp.vercel.app/og-image.jpg';
 const GTM_ID = 'GTM-KTXQSJD2';
 const GOOGLE_ADS_ID = 'AW-374411592';
 
@@ -46,12 +47,18 @@ const schema = {
   <meta property="og:site_name" content="Transformação & Equilíbrio" />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:image" content={SITE + '/og.png'} />
+  <meta property="og:image" content={OG_IMAGE} />
+  <meta property="og:image:secure_url" content={OG_IMAGE} />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Andréa Rosa Souza, psicóloga clínica, em seu consultório" />
   <meta property="og:url" content={SITE + '/'} />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={SITE + '/og.png'} />
+  <meta name="twitter:image" content={OG_IMAGE} />
+  <meta name="twitter:image:alt" content="Andréa Rosa Souza, psicóloga clínica, em seu consultório" />
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   <script is:inline define:vars={{ GTM_ID }}>
     window.dataLayer = window.dataLayer || [];
