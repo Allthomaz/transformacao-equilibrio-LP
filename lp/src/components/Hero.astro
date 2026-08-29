@@ -12,7 +12,7 @@ const DOCTORALIA = 'https://www.doctoralia.com.br/andrea-rosa-souza/psicologo/sa
       <span class="visually-hidden">Você não precisa mais carregar isso sozinho, sozinha.</span>
     </h1>
     <p class="hero__sub hero__sub--desktop">Se as noites viraram revirar na cama, os dias viraram piloto automático e a frase "vou resolver isso depois" já dura meses, existe um lugar pra destravar isso com calma. Atendimento presencial no Tatuapé ou online, com escuta e embasamento técnico.</p>
-    <p class="hero__contexto-mobile">Se a cabeça não desliga à noite, os dias passam no piloto automático e tudo fica sempre para depois, a terapia pode ser um espaço para começar a destravar isso com calma.</p>
+    <p class="hero__contexto-mobile">Se a cabeça não desliga à noite, os dias passam no piloto automático e tudo fica sempre para depois, a psicoterapia pode ser um espaço para começar a destravar isso com calma.</p>
     <p class="hero__publico">Adultos · Jovens 14+ · Casais</p>
     <div class="hero__ctas">
       <a class="btn" href={WHATSAPP} target="_blank" rel="noopener">Falar com a psicóloga</a>
@@ -23,6 +23,7 @@ const DOCTORALIA = 'https://www.doctoralia.com.br/andrea-rosa-souza/psicologo/sa
   <div class="hero__foto">
     <Image src={retrato} alt="Andréa Rosa Souza, psicóloga clínica" widths={[480, 640, 720, 960]} sizes="(max-width: 520px) calc(100vw - 32px), (max-width: 900px) 360px, 480px" loading="eager" fetchpriority="high" />
   </div>
+  <p class="hero__identificacao-mobile">Psicóloga clínica, presencial e online</p>
 </section>
 <style>
 .hero { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 0.9fr; align-items: center; gap: 5vw; padding: 8vh 5vw 10vh; }
@@ -51,6 +52,7 @@ const DOCTORALIA = 'https://www.doctoralia.com.br/andrea-rosa-souza/psicologo/sa
 .hero__publico { color: #464646; font-size: 14px; font-weight: 600; letter-spacing: .025em; margin-top: -18px; margin-bottom: 34px; text-shadow: 0 1px 4px rgba(70,70,70,.12); }
 .hero__ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 16px; }
 .hero__micro { font-size: 13px; color: var(--texto-suave); }
+.hero__identificacao-mobile { display: none; }
 .hero__foto { position: relative; aspect-ratio: 4 / 5; width: 100%; max-width: 480px; border: 1.6px solid rgba(255,255,255,0.85); outline: 1px solid rgba(255,255,255,0.45); outline-offset: 6px; border-radius: 24px; box-shadow: 0 24px 60px rgba(26,26,26,0.12), 0 0 0 10px rgba(255,255,255,0.18); }
 .hero__foto img { width: 100%; height: 100%; object-fit: cover; object-position: center top; border-radius: 22px; }
 .hero__foto::after { content: ''; position: absolute; inset: 0; border-radius: 22px; box-shadow: inset 0 0 0 6px rgba(255,255,255,0.08); pointer-events: none; }
@@ -67,21 +69,26 @@ const DOCTORALIA = 'https://www.doctoralia.com.br/andrea-rosa-souza/psicologo/sa
     margin: 0 0 27px; border-radius: 24px;
   }
   .hero__foto img { object-position: center 18%; border-radius: 22px; }
+  .hero__identificacao-mobile {
+    display: block; order: 2; margin: 0 0 15px;
+    color: var(--terracota); font-size: 11px; font-weight: 400;
+    letter-spacing: .04em; text-align: center;
+  }
   .hero .kicker { display: none; }
   .hero__titulo {
-    order: 2; margin-bottom: 18px;
+    order: 3; margin-bottom: 18px;
     font-size: clamp(38px, 10.6vw, 46px); line-height: .99;
   }
   .hero__palavra { display: block; min-height: 1.08em; padding-left: 0; }
   .hero__sub--desktop, .hero__publico { display: none; }
   .hero__contexto-mobile {
-    display: block; order: 3; max-width: none; margin: 0;
+    display: block; order: 4; max-width: none; margin: 0;
     color: var(--texto-suave); font-weight: 300;
     font-size: 15px; line-height: 1.55;
   }
   .hero__ctas { display: contents; }
   .hero__ctas .btn { width: 100%; min-height: 49px; justify-content: center; }
-  .hero__ctas .btn:first-child { order: 4; margin-top: 18px; }
+  .hero__ctas .btn:first-child { order: 5; margin-top: 18px; }
   .hero__micro, .hero__ctas .btn--outline { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .hero__palavra::after { animation: none; opacity: 1; } }
