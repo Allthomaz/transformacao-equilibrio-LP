@@ -12,14 +12,13 @@ const DOCTORALIA = 'https://www.doctoralia.com.br/andrea-rosa-souza/psicologo/sa
       <span class="visually-hidden">Você não precisa mais carregar isso sozinho, sozinha.</span>
     </h1>
     <p class="hero__sub hero__sub--desktop">Se as noites viraram revirar na cama, os dias viraram piloto automático e a frase "vou resolver isso depois" já dura meses, existe um lugar pra destravar isso com calma. Atendimento presencial no Tatuapé ou online, com escuta e embasamento técnico.</p>
-    <p class="hero__sub hero__sub--mobile">Psicoterapia acolhedora, presencial no Tatuapé ou online, para adultos, jovens a partir de 14 anos e casais.</p>
+    <p class="hero__contexto-mobile">Se a cabeça não desliga à noite, os dias passam no piloto automático e tudo fica sempre para depois, a terapia pode ser um espaço para começar a destravar isso com calma.</p>
     <p class="hero__publico">Adultos · Jovens 14+ · Casais</p>
     <div class="hero__ctas">
       <a class="btn" href={WHATSAPP} target="_blank" rel="noopener">Falar com a psicóloga</a>
       <a class="btn btn--outline" href={DOCTORALIA} target="_blank" rel="noopener">Verificar horários</a>
     </div>
     <p class="hero__micro">Sem compromisso · Respondo pessoalmente</p>
-    <p class="hero__contexto-mobile">Se as noites viraram revirar na cama, os dias viraram piloto automático e a frase "vou resolver isso depois" já dura meses, existe um lugar pra destravar isso com calma.</p>
   </div>
   <div class="hero__foto">
     <Image src={retrato} alt="Andréa Rosa Souza, psicóloga clínica" widths={[480, 640, 720, 960]} sizes="(max-width: 520px) calc(100vw - 32px), (max-width: 900px) 360px, 480px" loading="eager" fetchpriority="high" />
@@ -48,7 +47,7 @@ const DOCTORALIA = 'https://www.doctoralia.com.br/andrea-rosa-souza/psicologo/sa
 .hero__palavra::after { content: '|'; display: inline-block; margin-left: .04em; color: var(--terracota-escuro); font-style: normal; font-weight: 300; animation: cursor-pisca .82s steps(1, end) infinite; }
 @keyframes cursor-pisca { 0%, 48% { opacity: 1; } 49%, 100% { opacity: 0; } }
 .hero__sub { font-size: 17px; font-weight: 300; line-height: 1.65; color: var(--texto-suave); max-width: 480px; margin-bottom: 34px; }
-.hero__sub--mobile, .hero__contexto-mobile { display: none; }
+.hero__contexto-mobile { display: none; }
 .hero__publico { color: #464646; font-size: 14px; font-weight: 600; letter-spacing: .025em; margin-top: -18px; margin-bottom: 34px; text-shadow: 0 1px 4px rgba(70,70,70,.12); }
 .hero__ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 16px; }
 .hero__micro { font-size: 13px; color: var(--texto-suave); }
@@ -68,31 +67,22 @@ const DOCTORALIA = 'https://www.doctoralia.com.br/andrea-rosa-souza/psicologo/sa
     margin: 0 0 27px; border-radius: 24px;
   }
   .hero__foto img { object-position: center 18%; border-radius: 22px; }
-  .hero .kicker {
-    order: 2; margin-bottom: 15px;
-    font-size: 10.5px; line-height: 1.45; letter-spacing: .17em;
-  }
-  .hero .kicker::before { width: 24px; height: 1px; }
+  .hero .kicker { display: none; }
   .hero__titulo {
-    order: 3; margin-bottom: 18px;
+    order: 2; margin-bottom: 18px;
     font-size: clamp(38px, 10.6vw, 46px); line-height: .99;
   }
   .hero__palavra { display: block; min-height: 1.08em; padding-left: 0; }
   .hero__sub--desktop, .hero__publico { display: none; }
-  .hero__sub--mobile {
-    display: block; order: 4; max-width: none; margin-bottom: 0;
+  .hero__contexto-mobile {
+    display: block; order: 3; max-width: none; margin: 0;
+    color: var(--texto-suave); font-weight: 300;
     font-size: 15px; line-height: 1.55;
   }
   .hero__ctas { display: contents; }
   .hero__ctas .btn { width: 100%; min-height: 49px; justify-content: center; }
-  .hero__ctas .btn:first-child { order: 5; margin-top: 18px; }
-  .hero__micro { order: 6; margin-top: 11px; text-align: center; font-size: 11px; }
-  .hero__contexto-mobile {
-    display: block; order: 7; margin-top: 34px; padding-top: 26px;
-    border-top: 1px solid var(--borda); color: var(--texto-suave);
-    font-size: 14px; font-weight: 300; line-height: 1.65;
-  }
-  .hero__ctas .btn--outline { order: 8; margin-top: 18px; }
+  .hero__ctas .btn:first-child { order: 4; margin-top: 18px; }
+  .hero__micro, .hero__ctas .btn--outline { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .hero__palavra::after { animation: none; opacity: 1; } }
 </style>
