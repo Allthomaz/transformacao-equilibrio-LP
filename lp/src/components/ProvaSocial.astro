@@ -41,29 +41,29 @@ const depoimentos = [
   background: var(--superficie); border: 1px solid var(--borda); border-radius: 24px;
   padding: 48px 40px; text-align: center;
 }
-.prova__numero { font-family: var(--serif); font-size: clamp(72px, 8vw, 96px); line-height: 1; color: var(--terracota); }
+.prova__numero { font-family: var(--serif); font-size: clamp(72px, 8vw, 96px); line-height: 1; color: var(--verde-principal); }
 .prova__estrelas { display: flex; justify-content: center; gap: 6px; margin: 18px 0 10px; }
-.prova__estrelas svg { width: 22px; height: 22px; fill: var(--terracota); }
+.prova__estrelas svg { width: 22px; height: 22px; fill: var(--verde-principal); }
 .prova__contagem { font-size: 15px; color: var(--texto-suave); margin-bottom: 24px; }
 .prova__selos { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
 .prova__selo {
   font-size: 12.5px; font-weight: 500; letter-spacing: 0.3px;
-  color: var(--verde); border: 1.5px solid var(--verde);
+  color: var(--verde-escuro); border: 1.5px solid var(--verde-principal);
   border-radius: 999px; padding: 7px 16px;
 }
 .prova__depoimentos { display: flex; flex-direction: column; gap: 28px; }
 .prova__quote { position: relative; padding-left: 54px; }
 .prova__quote::before {
   content: '\201C'; position: absolute; left: 0; top: -14px;
-  font-family: var(--serif); font-size: 72px; line-height: 1; color: var(--terracota); opacity: 0.35;
+  font-family: var(--serif); font-size: 72px; line-height: 1; color: var(--verde-principal); opacity: 0.35;
 }
 .prova__quote p { font-family: var(--serif); font-size: clamp(20px, 2vw, 26px); line-height: 1.4; }
 .prova__quote cite { display: block; margin-top: 10px; font-style: normal; font-family: var(--sans); font-size: 13px; color: var(--texto-suave); }
 .prova__link {
   align-self: flex-start; font-size: 14px; font-weight: 500;
-  color: var(--terracota-escuro); text-decoration: none; border-bottom: 1px solid transparent;
+  color: var(--verde-escuro); text-decoration: none; border-bottom: 1px solid transparent;
   transition: border-color .2s ease;
 }
-.prova__link:hover { border-color: var(--terracota); }
+.prova__link:hover { border-color: var(--verde-principal); }
 @media (max-width: 900px) { .prova__grid { grid-template-columns: 1fr; gap: 40px; } }
 </style>

@@ -72,7 +72,7 @@ Trechos (verificados):
 
 - **Experiência/marca:** +10 anos de clínica · marca "Transformação & Equilíbrio" (CNPJ 36.940.050/0001-04)
 - **Endereço:** Rua Apucarana, Tatuapé, São Paulo — usar no topo/rodapé e seção de contatos (credibilidade local + SEO)
-- **Pagamento:** exclusivamente particular (sem convênios); PIX, crédito/débito, transferência e boleto. → no FAQ: "emite recibo para reembolso do plano de saúde"
+- **Pagamento:** exclusivamente particular (sem convênios); somente PIX ou transferência. → no FAQ: "emite recibo para reembolso do plano de saúde"
 - **Público/especialidades confirmados:** jovens ≥14, adultos, casais; avaliação p/ cirurgia bariátrica; formadores UNIP, Grupo Wainer, Instituto Freedom, UNIFESP
 - **Isca digital possível:** site atual oferece "Desafios de Meditação" (ex.: 10 Days to Calm) e newsletter de saúde mental → posicionar no fim da LP para captar quem ainda não quer agendar (quebra da objeção "medo da 1ª sessão")
 
@@ -104,3 +104,9 @@ Trechos (verificados):
 - [ ] Escolher headline do hero (opções A–D da seção 8)
 - [ ] Confirmar com a Andréa se a isca digital (Desafio de Meditação/newsletter) entra na LP
 - [ ] Número do WhatsApp + link do perfil Doctoralia (para os CTAs)
+
+## 9. Ajustes solicitados pela Andréa (03/09/2026)
+
+- Remover bipolaridade e borderline das questões acompanhadas e da descrição da psicoterapia individual.
+- Informar somente PIX ou transferência como formas de pagamento.
+- Substituir os detalhes terracota/marrom por uma paleta de verdes sálvia e floresta, preservando os fundos neutros e quentes.

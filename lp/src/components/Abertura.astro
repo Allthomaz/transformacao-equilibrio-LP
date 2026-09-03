@@ -4,7 +4,7 @@ import simbolo from '../assets/imagens/logo-icone.png';
 ---
 
 <div class="abertura" data-abertura aria-hidden="true">
-  <div class="abertura__luz abertura__luz--terracota"></div>
+  <div class="abertura__luz abertura__luz--verde-principal"></div>
   <div class="abertura__luz abertura__luz--verde"></div>
   <div class="abertura__textura"></div>
 
@@ -50,7 +50,7 @@ import simbolo from '../assets/imagens/logo-icone.png';
   }
   .abertura__boas-vindas {
     margin-bottom: 12px;
-    color: var(--terracota-escuro);
+    color: var(--verde-escuro);
     font: 500 clamp(12px, 1.3vw, 14px)/1.4 var(--sans);
     letter-spacing: .16em; text-transform: uppercase;
     opacity: 0; transform: translateY(10px) scale(.985);
@@ -68,7 +68,7 @@ import simbolo from '../assets/imagens/logo-icone.png';
   }
   .abertura__linha {
     width: 0; height: 1.5px; margin-top: 28px;
-    background: linear-gradient(90deg, transparent, var(--terracota), transparent);
+    background: linear-gradient(90deg, transparent, var(--verde-principal), transparent);
     opacity: 0;
   }
   .is-ativa .abertura__linha {
@@ -78,15 +78,15 @@ import simbolo from '../assets/imagens/logo-icone.png';
     position: absolute; z-index: 1; border-radius: 50%; filter: blur(2px);
     opacity: 0; transform: scale(.86);
   }
-  .abertura__luz--terracota {
+  .abertura__luz--verde-principal {
     width: min(78vw, 900px); aspect-ratio: 1; top: -45%; right: -18%;
-    background: radial-gradient(circle, rgba(178,95,63,.14), rgba(178,95,63,0) 68%);
+    background: radial-gradient(circle, rgba(95,120,101,.14), rgba(95,120,101,0) 68%);
   }
   .abertura__luz--verde {
     width: min(62vw, 720px); aspect-ratio: 1; bottom: -42%; left: -16%;
-    background: radial-gradient(circle, rgba(74,124,89,.09), rgba(74,124,89,0) 70%);
+    background: radial-gradient(circle, rgba(68,107,80,.09), rgba(68,107,80,0) 70%);
   }
-  .is-ativa .abertura__luz--terracota {
+  .is-ativa .abertura__luz--verde-principal {
     animation: luz-entrar 1.2s .05s cubic-bezier(.22,1,.36,1) forwards;
   }
   .is-ativa .abertura__luz--verde {
@@ -129,7 +129,7 @@ import simbolo from '../assets/imagens/logo-icone.png';
     .abertura__simbolo { width: 68px; height: 65px; margin-bottom: 22px; }
     .abertura__boas-vindas { max-width: 290px; letter-spacing: .12em; }
     .abertura__marca { max-width: 350px; }
-    .abertura__luz--terracota { width: 130vw; top: -28%; right: -55%; }
+    .abertura__luz--verde-principal { width: 130vw; top: -28%; right: -55%; }
     .abertura__luz--verde { width: 110vw; bottom: -27%; left: -48%; }
   }
   @media (prefers-reduced-motion: reduce) { .abertura { display: none; } }

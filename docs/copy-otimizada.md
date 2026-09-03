@@ -39,11 +39,9 @@
 | 3 | Luto e perdas | A vida pede que você siga, mas tem dias em que uma música, um cheiro ou uma data derrubam tudo de novo. |
 | 4 | Traumas e fobias | Evitar a rua, o elevador, o cachorro — organizar o dia inteiro em volta de algo que você prefere não encontrar. |
 | 5 | TOC | Trancar a porta e voltar três vezes pra conferir. Saber que é irracional — e não conseguir evitar o ritual. |
-| 6 | Bipolaridade | Semanas em que você dá conta de tudo — e outras em que nem levantar da cama parece possível. Sem aviso, sem meio-termo. |
-| 7 | Borderline | Relações que começam intensas e terminam em medo de ser abandonado — e uma sensação de vazio que nenhuma distraição preenche. |
-| 8 | Relacionamento abusivo | Andar em ovos dentro de casa, reler mensagens pra entender o que deu errado, duvidar da própria memória. |
-| 9 | Casal | Vocês dividem o mesmo sofá e celulares diferentes. Brigas que começam na louça e terminam em silêncio por dias. |
-| 10 | Autoconhecimento | Perceber que, mesmo mudando as pessoas e os lugares, certos desfechos se repetem, e começar a investigar qual é a sua participação nesse padrão. |
+| 6 | Relacionamento abusivo | Andar em ovos dentro de casa, reler mensagens pra entender o que deu errado, duvidar da própria memória. |
+| 7 | Casal | Vocês dividem o mesmo sofá e celulares diferentes. Brigas que começam na louça e terminam em silêncio por dias. |
+| 8 | Autoconhecimento | Perceber que, mesmo mudando as pessoas e os lugares, certos desfechos se repetem, e começar a investigar qual é a sua participação nesse padrão. |
 
 *CTA da seção:* Não se identificou? A conversa é o começo.
 

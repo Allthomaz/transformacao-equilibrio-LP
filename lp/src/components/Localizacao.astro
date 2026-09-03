@@ -34,19 +34,19 @@ const ROTA = 'https://www.google.com/maps/dir/?api=1&destination=Rua%20Apucarana
 
 <style>
   .localizacao { padding: clamp(26px, 4vw, 46px) 5vw clamp(48px, 7vw, 82px); background: var(--bg); }
-  .localizacao__card { position: relative; max-width: 1040px; min-height: 300px; margin: 0 auto; overflow: hidden; display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr); border: 1px solid rgba(150,73,46,.15); border-radius: 24px; background: var(--superficie); box-shadow: 0 18px 48px rgba(26,26,26,.06); }
+  .localizacao__card { position: relative; max-width: 1040px; min-height: 300px; margin: 0 auto; overflow: hidden; display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr); border: 1px solid rgba(53,91,67,.16); border-radius: 24px; background: var(--superficie); box-shadow: 0 18px 48px rgba(26,26,26,.06); }
   .localizacao__mapa { min-height: 300px; background: var(--bege); }
   .localizacao__mapa iframe { width: 100%; height: 100%; min-height: 300px; display: block; border: 0; }
   .localizacao__painel { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 26px; padding: clamp(30px, 4vw, 48px); }
   .localizacao__conteudo { display: flex; align-items: center; gap: 20px; text-align: left; }
-  .localizacao__pin { width: 50px; height: 50px; flex: 0 0 auto; display: grid; place-items: center; border-radius: 50%; color: var(--terracota-escuro); background: rgba(178,95,63,.09); }
+  .localizacao__pin { width: 50px; height: 50px; flex: 0 0 auto; display: grid; place-items: center; border-radius: 50%; color: var(--verde-escuro); background: var(--verde-suave); }
   .localizacao__pin svg { width: 27px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-  .localizacao__kicker { margin-bottom: 7px; color: var(--terracota-escuro); font-size: 11px; font-weight: 500; letter-spacing: 2.2px; text-transform: uppercase; }
+  .localizacao__kicker { margin-bottom: 7px; color: var(--verde-escuro); font-size: 11px; font-weight: 500; letter-spacing: 2.2px; text-transform: uppercase; }
   .localizacao h2 { margin-bottom: 7px; font-family: var(--serif); font-size: clamp(27px, 3vw, 38px); font-weight: 400; line-height: 1.08; }
   .localizacao__conteudo p:last-child { color: var(--texto-suave); font-size: 14px; }
   .localizacao__acoes { display: flex; align-items: center; }
-  .localizacao__rota { min-height: 46px; display: inline-flex; align-items: center; justify-content: center; padding: 11px 21px; border-radius: 999px; color: #fff; background: var(--terracota-acao); font: 500 14px var(--sans); text-decoration: none; }
-  .localizacao__rota:hover, .localizacao__rota:focus-visible { background: var(--terracota-escuro); }
+  .localizacao__rota { min-height: 46px; display: inline-flex; align-items: center; justify-content: center; padding: 11px 21px; border-radius: 999px; color: #fff; background: var(--verde-acao); font: 500 14px var(--sans); text-decoration: none; }
+  .localizacao__rota:hover, .localizacao__rota:focus-visible { background: var(--verde-escuro); }
   @media (max-width: 720px) {
     .localizacao { padding: 20px 16px 54px; }
     .localizacao__card { min-height: 0; grid-template-columns: 1fr; border-radius: 22px; }

@@ -27,15 +27,15 @@ const DOCTORALIA = 'https://www.doctoralia.com.br/andrea-rosa-souza/psicologo/sa
 </section>
 <style>
 .hero { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 0.9fr; align-items: center; gap: 5vw; padding: 8vh 5vw 10vh; }
-.kicker { display: inline-flex; align-items: center; gap: 12px; font-size: 13px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--terracota-escuro); margin-bottom: 26px; }
-.kicker::before { content: ''; display: block; width: 34px; height: 1.5px; background: var(--terracota); }
+.kicker { display: inline-flex; align-items: center; gap: 12px; font-size: 13px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--verde-escuro); margin-bottom: 26px; }
+.kicker::before { content: ''; display: block; width: 34px; height: 1.5px; background: var(--verde-principal); }
 .hero__titulo { font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 5vw, 68px); line-height: 1.08; margin-bottom: 22px; }
 .hero__palavra {
   display: inline-block;
   min-width: 7.4ch;
   margin-top: .08em;
   padding-left: clamp(.18rem, .55vw, .55rem);
-  color: var(--terracota);
+  color: var(--verde-principal);
   font-family: 'Fraunces', var(--serif);
   font-size: 1.04em;
   font-style: italic;
@@ -45,7 +45,7 @@ const DOCTORALIA = 'https://www.doctoralia.com.br/andrea-rosa-souza/psicologo/sa
   white-space: nowrap;
   vertical-align: baseline;
 }
-.hero__palavra::after { content: '|'; display: inline-block; margin-left: .04em; color: var(--terracota-escuro); font-style: normal; font-weight: 300; animation: cursor-pisca .82s steps(1, end) infinite; }
+.hero__palavra::after { content: '|'; display: inline-block; margin-left: .04em; color: var(--verde-escuro); font-style: normal; font-weight: 300; animation: cursor-pisca .82s steps(1, end) infinite; }
 @keyframes cursor-pisca { 0%, 48% { opacity: 1; } 49%, 100% { opacity: 0; } }
 .hero__sub { font-size: 17px; font-weight: 300; line-height: 1.65; color: var(--texto-suave); max-width: 480px; margin-bottom: 34px; }
 .hero__contexto-mobile { display: none; }
@@ -71,7 +71,7 @@ const DOCTORALIA = 'https://www.doctoralia.com.br/andrea-rosa-souza/psicologo/sa
   .hero__foto img { object-position: center 18%; border-radius: 22px; }
   .hero__identificacao-mobile {
     display: block; order: 2; margin: 0 0 15px;
-    color: var(--terracota); font-size: 11px; font-weight: 400;
+    color: var(--verde-principal); font-size: 11px; font-weight: 400;
     letter-spacing: .04em; text-align: center;
   }
   .hero .kicker { display: none; }

@@ -2,7 +2,7 @@
 const faqs = [
   {
     pergunta: 'O atendimento é particular ou aceita convênios?',
-    resposta: 'O atendimento é apenas particular. Você pode pagar via PIX, cartão de crédito, cartão de débito, transferência ou boleto, e é emitido recibo para você solicitar reembolso junto ao seu plano de saúde.',
+    resposta: 'O atendimento é apenas particular. O pagamento pode ser feito via PIX ou transferência, e é emitido recibo para você solicitar reembolso junto ao seu plano de saúde.',
   },
   {
     pergunta: 'Como funciona o atendimento online?',
@@ -39,9 +39,9 @@ const faqs = [
 .kicker {
   display: inline-flex; align-items: center; gap: 12px;
   font-size: 13px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase;
-  color: var(--terracota-escuro); margin-bottom: 22px;
+  color: var(--verde-escuro); margin-bottom: 22px;
 }
-.kicker::before, .kicker::after { content: ''; display: block; width: 34px; height: 1.5px; background: var(--terracota-escuro); }
+.kicker::before, .kicker::after { content: ''; display: block; width: 34px; height: 1.5px; background: var(--verde-escuro); }
 .faq__titulo { font-family: var(--serif); font-weight: 400; font-size: clamp(34px, 4vw, 54px); line-height: 1.12; margin-bottom: 48px; }
 .faq__lista { max-width: 760px; margin: 0 auto; text-align: left; }
 .faq__item { border-bottom: 1px solid var(--borda); }
@@ -57,7 +57,7 @@ const faqs = [
   content: '+';
   flex-shrink: 0;
   font-family: var(--sans); font-size: 20px; font-weight: 300;
-  color: var(--terracota);
+  color: var(--verde-principal);
   transition: transform .25s ease;
 }
 .faq__item[open] .faq__pergunta::after { transform: rotate(45deg); }
